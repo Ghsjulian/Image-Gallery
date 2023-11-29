@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0.5rem;
+    padding: 0.2rem;
+    background: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.loader h3 {
+    color: #444444;
+    font-weight: 800;
+    font-size: 30px;
+    font-family: serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.container .col {
+    width: 100%;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 0.1px solid #c2c2c2;
+}
+.col img {
+    width: 200px;
+    height: 230px;
+    object-fit: fill;
+    border-radius: 8px;
+}
+.view {
+    position: fixed;
+    max-width: 950px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    justify-content: center;
+    top: 25%;
+    font-family: Monospace;
+    z-index: 10000;
+    animation: logo 1s linear alternate;
+}
+.view img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: fill;
+}
+.view #cross {
+    position: absolute;
+    display: inline;
+    top: 0;
+    right: 0;
+    color: #f00;
+    font-weight: 900;
+    font-size: 17px;
+    padding: 0.3rem;
+    width: 30px;
+    height: 30px;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+    }
+    .container .col {
+        padding: 0.8rem;
+    }
+    .col img {
+        width: 100%;
+        height: 170px;
+    }
+    .view {
+        width: 90%;
+    }
+    /*
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .col img {
+        width: 100%;
+        height: 230px;
+        object-fit: fill;
+    }
+    */
+}
+@keyframes logo {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(0.5);
+    }
+    80% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1.01);
+        opacity: 1;
+    }
+}

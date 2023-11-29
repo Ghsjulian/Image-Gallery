@@ -1,0 +1,19 @@
+import os
+
+dir_name = "./"
+file_name = "ghs__julian__"
+dir_list = os.listdir(dir_name)
+
+
+
+i = 0
+while i<len(dir_list):
+    file = dir_name+dir_list[i]
+    if file == "rename.py":
+        continue
+    os.rename(file,file_name+str(i)+".png")
+    i+=1
+
+print(dir_list)
+print("\n All File Has Renamed Successfully !")
+
